@@ -1,18 +1,16 @@
 import React from "react";
+import "../styles/ColorBox.css";
 
 export default function ColorBox({ name, color }) {
-  const style = {
-    backgroundColor: color,
-    width: "20%",
-    height: "25%",
-    display: "inline-block",
-    position: "relative",
-    cursor: "pointer"
-  };
   return (
-    <div className="ColorBox" style={style}>
-      <span>More</span>
-      <span>{name}</span>
+    <div className="ColorBox" style={{ backgroundColor: color }}>
+      <div className="copy-content">
+        <div className="ColorBox-content">
+          <span>{name}</span>
+        </div>
+        <button className="copy-button">Copy</button>
+      </div>
+      <span className="see-more">More</span>
     </div>
   );
 }
