@@ -11,30 +11,20 @@ export default class ColorBox extends Component {
     });
   };
 
-  displayCopied = () => {
-    const { color, name } = this.props;
+  render() {
+    const { hex, name } = this.props;
     const { copied } = this.state;
     return (
-      <>
-        <div
-          className={`copy-color-box ${copied && "show"}`}
-          style={{ backgroundColor: color }}
-        />
-        <div className={`copy-msg ${copied && "show"}`}>
-          <h1>copied!!</h1>
-          <p>{name}</p>
-        </div>
-      </>
-    );
-  };
-
-  render() {
-    const { color, name } = this.props;
-
-    return (
-      <CopyToClipboard text={color} onCopy={this.handleCopy}>
-        <div className="ColorBox" style={{ backgroundColor: color }}>
-          {this.displayCopied()}
+      <CopyToClipboard text={hex} onCopy={this.handleCopy}>
+        <div className="ColorBox" style={{ backgroundColor: hex }}>
+          <div
+            className={`copy-color-box ${copied && "show"}`}
+            style={{ backgroundColor: hex }}
+          />
+          <div className={`copy-msg ${copied && "show"}`}>
+            <h1>copied!!</h1>
+            <p>{name}</p>
+          </div>
           <div className="copy-content">
             <div className="ColorBox-content">
               <span>{name}</span>

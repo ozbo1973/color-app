@@ -4,10 +4,9 @@ import { generatePalette } from "./helpers/colorHelper";
 import Palette from "./components/Palette";
 
 function App() {
-  console.log(generatePalette(paletteColors[3]));
   return (
     <div className="App">
-      <Palette {...paletteColors[3]} />
+      <Palette palette={generatePalette(paletteColors[4])} />
     </div>
   );
 }
